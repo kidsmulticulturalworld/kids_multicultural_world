@@ -1,0 +1,516 @@
+.navSideBar{
+    position: fixed;
+    width: 100px;
+    height: 100%;
+    /* background-color: aqua;     */
+}
+.classessContent_subs{
+    max-height: 370px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+}
+.classessContent_subs::-webkit-scrollbar {
+    display: none;
+}
+.sideBarIconcontainer{
+    position: absolute;
+    height: 500px;
+    width: 70px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #CF5271;
+    border-radius: 50px;
+}
+/* .bg_blur{
+    background-color: #f1f1f1;
+    min-height: 100vh;
+} */
+.mainContent{
+    background-color: #fff;
+    margin: 0 10px 10px 50px;
+    border-radius: 15px;
+    min-height: 97vh;
+    padding-left: 50px;
+}
+
+.iconsConts{
+    padding-top: 15px;
+    text-align: center;
+    margin-top: 25px;
+}
+.iconsConts div{
+    margin-bottom: 25px;
+}
+.dashNavs{
+    display: flex;
+    padding: 15px 35px 15px 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.navbarStickyTop{
+    border-radius: 10px;
+}
+.iconser{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.possitionIconizer{
+    padding: 10px 0 0 10px ;
+}
+.dashNavLinks{
+    padding: 14px 10px 0 10px ;
+}
+.mainContentDashboard{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 40px;
+    padding: 20px 50px 20px 20px;
+}
+.plansContainerInfo{
+    padding: 15px;
+    border-radius: 20px;
+}
+.spand{
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    padding: 2px;
+}
+.spand div{
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: 3px solid #ddd9d9;
+}
+.subscribe_btn{
+    background-color: #f1f1f1;
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.subscribe_btns{
+    background-color: rgb(207,82,113,.1);
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    padding: 5px;
+}
+.subscribe_btns.sbs{
+    background-color: transparent;
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    padding: 5px;
+}
+.recolor{
+    color: rgb(207,82,113);
+}
+
+.plansContainerInfos{
+    padding: 5px;
+    border-radius: 20px;
+}
+.plansContainerInfos .p-2{
+    border-radius: 15px;
+    padding: 9px;
+    /* border: 1px solid #f1f1f1; */
+}
+.bootDesign{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 40px;
+    padding: 10px 50px 20px 20px;
+}
+.bootContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.active .plansContainerInfo .spand div{
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: 3px solid #3491E8;
+}
+.active .subscribe_btn{
+    background-color: rgb(52,145,232,.2);
+}
+.active .subscribe_btn .text-muted{
+    color: rgb(52,145,232) !important;
+}
+.magazineDashboardContainer{
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-gap: 15px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.ClassicItemsSales img{
+    height: 118px;
+    width: 100%;
+    border-radius: 10px;
+}
+.eventDashboardContainer{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+    /* padding: 5px; */
+}
+
+
+.mainContentDashboardsubs{
+    padding: 20px 50px 20px 20px;
+}
+.mainContentDashboardsubsContainer{
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-gap: 40px;
+}
+
+.profileImageContainer img{
+    border-radius: 10px;
+}
+.profileImageContainer{
+    position: relative;
+}
+.padProfilexds{
+    padding-top: 20px;
+}
+.profileSkills div{
+    font-size: 14px;
+}
+.profilePhotosContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 60px;
+    column-gap: 20px;
+}
+.profileVideoContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding-top: 30px;
+}
+
+.profileRemarkContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding-top: 30px;
+}
+.PVContainer{
+    border-radius: 10px;
+    padding: 20px;
+}
+.DashboardTicketsContainer{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 30px;
+}
+.tickets{
+    padding-left: 10px;
+    border-left: 5px solid #CF5271;
+    margin-bottom: 15px;
+}
+.flex.xdv{
+    justify-content: space-between;
+    max-width: 700px;
+    width: 100%;
+    padding-top: 15px;
+}
+.settignsContent{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+}
+.setPcont{
+    margin: 10px 0 20px 0;
+    border-radius: 20px;
+    padding: 30px 40px;
+}
+.setPcont input{
+    width: 100%;
+    border: 1px solid #f1f1f1;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.grided{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+.grided3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.padSociaDisplay{
+    padding: 4px 20px;
+}
+.dashNavs samp,.cativ{
+    display: none;
+}
+.ClassicItemsSales.sm{
+    display: none;
+}
+.profileEditContainer{
+    max-width: 600px;
+    width: 100%;
+}
+.profileEditContainer div{
+    padding-bottom: 20px;
+}
+.profileEditContainerXr input[type=text],
+.profileEditContainerXr input[type=number],
+.profileEditContainerXr select,
+.profileEditContainer input[type=text],
+.profileEditContainer input[type=number],
+.profileEditContainer select,
+.grided33 textarea{
+    border: none;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    resize: none;
+}
+.profileEditContainer input[type=text]:focus,
+.profileEditContainer select:focus,
+.grided33 textarea:focus{
+    border-bottom: 1px solid #3491E8;
+}
+.inputFormBtn{
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #3491E8;
+    padding: 6px 30px;
+    border-radius: 10px;
+    max-width: 400px;
+}
+.tenderProfileImg{
+    max-width: 300px;
+}
+.delEditImg button{
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 5px;
+}
+.del_img_mod{
+    background-color: rgb(255,255,255,.5);
+    border-radius: 15px;
+    padding: 5px;
+}
+.bgWhitee{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 7px;
+}
+.del_img_mod button{
+    background-color: #CF5271;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 7px;
+    width: 100%;
+}
+.modal-content {
+    display: block !important;
+    height: initial !important;
+}
+.youtubeInputContainer{
+    display: flex;
+    max-width: 500px;
+    border-radius: 60px;
+    height: 50px;
+    padding: 5px;
+}
+.youtubeInputContainer input{
+    border: none !important;
+    max-width: 300px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 15px;
+    border-radius: 50px;
+}
+.youtubeInputContainer button{
+    margin-left: auto;
+    border-radius: 50px;
+    background-color: #3491E8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    width: 120px;
+}
+.removeVideo{
+    color: #fff;   
+    padding: 5px 15px;
+    border-radius: 0 30px 30px 0;
+    margin-top: 0;
+    font-size: 12px;
+}
+@media (max-width:900px) {
+    .DashboardTicketsContainer{
+        grid-template-columns: 1fr;
+    }
+    .zaTickets .zaTickets{
+        display: none;
+    }
+    .mainContentDashboard{
+        grid-template-columns: 2fr 3fr;
+    }
+    .font24{
+        font-size: 12px;
+    }
+    .subscribe_btn{
+        margin-top: 10px;
+    }
+    .subscribe_btn .font_14{
+        font-size: 11px;
+    }
+    .bootContent{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 12px;
+    }
+    
+    .ClassicItemsSales{
+        display: none;
+    }
+    .ClassicItemsSales.sm{
+        display: block;
+    }
+    .bootDesign{
+        grid-template-columns:1fr;
+        padding: 10px 20px 20px 20px;
+    }
+    .mainContentDashboardsubsContainer{
+        grid-template-columns: 2fr 3fr;
+    }
+    .profilePhotosContainer{
+        grid-template-columns: 1fr 1fr 1fr ;
+        row-gap: 60px;
+        column-gap: 10px;
+    }
+    .mainContentDashboardsubs{
+        padding: 13px;
+    }
+    .grided3{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:700px) {
+    .mainContentDashboard{
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .mainContentDashboardsubsContainer{
+        grid-template-columns: 1fr;
+    }
+    
+    .profileImageContainer img{
+        max-height: 350px;
+    }
+    .profileVideoContainer{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .settignsContent img{
+        display: none;
+    }
+    .settignsContent{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:650px) {
+    .dashNavLinks,.px_2 .iconser
+    ,.px_1 .iconser,.navSideBar{
+        display: none;
+    }
+    .mainContent{
+        background-color: #fff;
+        margin: 0 10px 10px 10px;
+        padding-left: 0;
+    }
+    .dashNavs{
+        padding: 15px 15px 15px 15px;
+        margin-right: 0;
+    }
+    .dashNavs samp,.cativ{
+        display: block;
+    }
+    .profilePhotosContainer{
+        grid-template-columns: 1fr 1fr ;
+    }
+}
+@media (max-width:600px) {
+    .profileRemarkContainer{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:500px) {
+    .settingsContainer .pointer.pr_1{
+        font-size: 12px;
+    }
+    .setPcont{
+        margin: 10px 0 20px 0;
+        border-radius: 20px;
+        padding: 30px 15px;
+    }
+    .grided{
+        grid-template-columns: 1fr;
+    }
+    .grided3{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:450px) {
+    .bootContent{
+        grid-template-columns: 1fr;
+    }
+    .font_38{
+        font-size: 20px;
+    }
+    .profilePhotosContainer{
+        grid-template-columns: 1fr ;
+    }
+    .profileVideoContainer{
+        grid-template-columns: 1fr;
+    }
+    .settingsContainer .pointer.pr_1{
+        font-size: 10px;
+        padding-right: 4px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

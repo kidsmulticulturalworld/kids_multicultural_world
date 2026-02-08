@@ -1,0 +1,186 @@
+{
+    "mergeLabelDocOption": "LABELS_AND_DOCS",
+    "requestedShipment": {
+      "shipDatestamp": "2019-10-14",
+      "totalDeclaredValue": {
+        "amount": 12.45,
+        "currency": "USD"
+      },
+      "shipper": {
+        "address": {
+          "streetLines": [
+            "10 FedEx Parkway",
+            "Suite 302"
+          ],
+          "city": "Beverly Hills",
+          "stateOrProvinceCode": "CA",
+          "postalCode": "90210",
+          "countryCode": "US",
+          "residential": false
+        },
+        "contact": {
+          "personName": "John Taylor",
+          "emailAddress": "sample@company.com",
+          "phoneExtension": "91",
+          "phoneNumber": "XXXX567890",
+          "companyName": "Fedex"
+        },
+        "tins": [
+          {
+            "number": "XXX567",
+            "tinType": "FEDERAL",
+            "usage": "usage",
+            "effectiveDate": "2000-01-23T04:56:07.000+00:00",
+            "expirationDate": "2000-01-23T04:56:07.000+00:00"
+          }
+        ]
+      },
+      "soldTo": {
+        "address": {
+          "streetLines": [
+            "10 FedEx Parkway",
+            "Suite 302"
+          ],
+          "city": "Beverly Hills",
+          "stateOrProvinceCode": "CA",
+          "postalCode": "90210",
+          "countryCode": "US",
+          "residential": false
+        },
+        "contact": {
+          "personName": "John Taylor",
+          "emailAddress": "sample@company.com",
+          "phoneExtension": "91",
+          "phoneNumber": "1234567890",
+          "companyName": "Fedex"
+        },
+        "tins": [
+          {
+            "number": "123567",
+            "tinType": "FEDERAL",
+            "usage": "usage",
+            "effectiveDate": "2000-01-23T04:56:07.000+00:00",
+            "expirationDate": "2000-01-23T04:56:07.000+00:00"
+          }
+        ],
+        "accountNumber": {
+          "value": "Your account number"
+        }
+      },
+      "recipients": [
+        {
+          "address": {
+            "streetLines": [
+              "10 FedEx Parkway",
+              "Suite 302"
+            ],
+            "city": "Beverly Hills",
+            "stateOrProvinceCode": "CA",
+            "postalCode": "90210",
+            "countryCode": "US",
+            "residential": false
+          },
+          "contact": {
+            "personName": "John Taylor",
+            "emailAddress": "sample@company.com",
+            "phoneExtension": "000",
+            "phoneNumber": "XXXX345671",
+            "companyName": "FedEx"
+          },
+          "tins": [
+            {
+              "number": "123567",
+              "tinType": "FEDERAL",
+              "usage": "usage",
+              "effectiveDate": "2000-01-23T04:56:07.000+00:00",
+              "expirationDate": "2000-01-23T04:56:07.000+00:00"
+            }
+          ],
+          "deliveryInstructions": "Delivery Instructions"
+        }
+      ],
+      "recipientLocationNumber": "1234567",
+      "pickupType": "USE_SCHEDULED_PICKUP",
+      "serviceType": "PRIORITY_OVERNIGHT",
+      "packagingType": "YOUR_PACKAGING",
+      "totalWeight": 20.6,
+      "origin": {
+        "address": {
+          "streetLines": [
+            "10 FedEx Parkway",
+            "Suite 302"
+          ],
+          "city": "Beverly Hills",
+          "stateOrProvinceCode": "CA",
+          "postalCode": "38127",
+          "countryCode": "US",
+          "residential": false
+        },
+        "contact": {
+          "personName": "person name",
+          "emailAddress": "email address",
+          "phoneNumber": "phone number",
+          "phoneExtension": "phone extension",
+          "companyName": "company name",
+          "faxNumber": "fax number"
+        }
+      },
+      "shippingChargesPayment": {
+        "paymentType": "SENDER",
+        "payor": {
+          "responsibleParty": {
+            "address": {
+              "streetLines": [
+                "10 FedEx Parkway",
+                "Suite 302"
+              ],
+              "city": "Beverly Hills",
+              "stateOrProvinceCode": "CA",
+              "postalCode": "90210",
+              "countryCode": "US",
+              "residential": false
+            },
+            "contact": {
+              "personName": "John Taylor",
+              "emailAddress": "sample@company.com",
+              "phoneNumber": "XXXX567890",
+              "phoneExtension": "phone extension",
+              "companyName": "Fedex",
+              "faxNumber": "fax number"
+            },
+            "accountNumber": {
+              "value": "Your account number"
+            }
+          }
+        }
+      },
+      "emailNotificationDetail": {
+        "aggregationType": "PER_PACKAGE",
+        "emailNotificationRecipients": [
+          {
+            "name": "Joe Smith",
+            "emailNotificationRecipientType": "SHIPPER",
+            "emailAddress": "jsmith3@aol.com",
+            "notificationFormatType": "TEXT",
+            "notificationType": "EMAIL",
+            "locale": "en_US",
+            "notificationEventType": [
+              "ON_PICKUP_DRIVER_ARRIVED",
+              "ON_SHIPMENT"
+            ]
+          }
+        ],
+        "personalMessage": "your personal message here"
+      },
+      "blockInsightVisibility": true,
+      "preferredCurrency": "USD",
+      "totalPackageCount": 25
+    },
+    "labelResponseOptions": "LABEL",
+    "accountNumber": {
+      "value": "Your account number"
+    },
+    "shipAction": "CONFIRM",
+    "processingOptionType": "ALLOW_ASYNCHRONOUS",
+    "oneLabelAtATime": true
+  }
