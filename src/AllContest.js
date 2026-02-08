@@ -17,7 +17,8 @@ const AllContest = () => {
         if (!value){
             dispatch(allContestAction())
         }
-    },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[dispatch])
     return (
         <div>
             <Navbar />
@@ -45,6 +46,7 @@ const AllContest = () => {
                                         </div>
                                     )
                                 }
+                                return null;
                             })}
                         </div>
                     </div>

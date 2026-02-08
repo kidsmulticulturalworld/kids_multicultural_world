@@ -64,6 +64,7 @@ const Acting = () => {
         if (!userInfo){
             history(`/login?redirect=/acting-classes`)
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[userInfo])
   return (
     <div>
