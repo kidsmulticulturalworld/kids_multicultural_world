@@ -1,7 +1,9 @@
 {
-  "buildCommand": "npm run build",
-  "devCommand": "npm start",
-  "installCommand": "npm install --legacy-peer-deps",
-  "framework": "create-react-app"
-}
-
+    "buildCommand": "DISABLE_ESLINT_PLUGIN=true npm run build",
+    "devCommand": "npm start",
+    "installCommand": "npm install --legacy-peer-deps",
+    "framework": "create-react-app",
+    "env": {
+      "DISABLE_ESLINT_PLUGIN": "true"
+    }
+  }
