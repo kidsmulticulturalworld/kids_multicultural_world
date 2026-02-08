@@ -71,7 +71,7 @@ const SucessComponent = ({clientSecret}) => {
                     break;
             }
         });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [stripe, clientSecret]);
     useEffect(()=>{
         setLoader(true)
@@ -83,7 +83,7 @@ const SucessComponent = ({clientSecret}) => {
             dispatch(cartAddAction())
             setLoader(false)
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[result, dispatch, persomInfo])
     return (
         <>

@@ -29,14 +29,14 @@ const Tickests = () => {
     
     useEffect(()=>{
         dispatch(eventTicketAction())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[dispatch])
 
     useEffect(()=>{
         if (!userInfo){
             history(`/login?redirect=/tickets`)
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[userInfo])
 
     useEffect(()=>{
@@ -45,7 +45,7 @@ const Tickests = () => {
         }else if(pager){
             dispatch(eventTicketAction({page:pager}))
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[pager, dispatch, startDate, endDate])
 
     const submitHandler = ()=>{
