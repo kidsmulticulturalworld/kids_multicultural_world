@@ -43,7 +43,7 @@ function ImageUploader({setImg}) {
         {error && <div className="alert centerx alert-danger">{error}</div>}
         {image ? (
             <div className='centerx'>
-                <img onClick={handleRemoveImage} className='rotate_45 ' src='/Images/Cancel (1).png'/>
+                <img onClick={handleRemoveImage} className='rotate_45 ' src='/Images/Cancel (1).png' alt="Remove"/>
                 <i className='text-muted centerx'>{image.name}</i>
             </div>
         )

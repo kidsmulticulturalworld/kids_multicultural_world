@@ -12,6 +12,7 @@ import EmailCasting from './components/emailCasting';
 import EmailForm from './components/emailer';
 import moment from 'moment';
 
+// eslint-disable-next-line no-unused-vars
 const stripePromise = loadStripe(process.env.REACT_APP_STRIP_PUBLIC_KEY);
 
 const SucessComponent = ({clientSecret}) => {
@@ -27,6 +28,7 @@ const SucessComponent = ({clientSecret}) => {
     const receipt = JSON.parse(localStorage.getItem(`receiptInfo`)) 
 
     const persomInfo = JSON.parse(localStorage.getItem(`checkOutUserInfo`))
+    // eslint-disable-next-line no-unused-vars
     const [emailData, setEmailDatas] = useState(persomInfo.email);
     useEffect(() => {
         setMessage(null)
@@ -69,7 +71,8 @@ const SucessComponent = ({clientSecret}) => {
                     break;
             }
         });
-    }, [stripe]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [stripe, clientSecret]);
     useEffect(()=>{
         setLoader(true)
         if (result){
@@ -80,7 +83,8 @@ const SucessComponent = ({clientSecret}) => {
             dispatch(cartAddAction())
             setLoader(false)
         }
-    },[result])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[result, dispatch, persomInfo])
     return (
         <>
             {error && <Message variant={"danger"}>Something went wrong. Please try again later</Message>}

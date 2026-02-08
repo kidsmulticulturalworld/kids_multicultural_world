@@ -39,7 +39,7 @@ const SignUp = () => {
     //     history("/tiers")
     // }
     function password_validate(p) {
-        return new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})").test(p)
+        return new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})").test(p)
     }
 
     const submitHandler = ()=>{
