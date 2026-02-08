@@ -2,7 +2,6 @@
   "buildCommand": "yarn build",
   "devCommand": "yarn start",
   "installCommand": "yarn install",
-  "framework": "create-react-app",
-  "nodeVersion": "18.x"
+  "framework": "create-react-app"
 }
 
