@@ -1,6 +1,6 @@
 import {createStore, combineReducers, applyMiddleware} from "redux"
 import thunk from "redux-thunk"
-import { composeWithDevTools } from "redux-devtools-extension"
+import { composeWithDevTools } from "@redux-devtools/extension"
 import { allContestReducer, cartAddReducer, checkoutReducer, contestReducer, contestantReducer, dashboardReducer, delReducer, eventDetsilReducer, eventReducer, eventTicketReducer, kidsDetailsReducer, kidsViewReducer, logoutReducer, magazineReducer, newsLetterReducer, orderReducer, passwordResetReducer, passwordSetReducer, receiptReducer, shopDetsilReducer, shopReducer, signUpReducer, ticketVerifyReducer, updateReducer, userLoginReducer } from "./Reducer"
 
 
