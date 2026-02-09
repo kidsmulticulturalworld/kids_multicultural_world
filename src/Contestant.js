@@ -58,7 +58,7 @@ const Contestant = () => {
                             </Link>
                         </div>
                         <div className='center max_ContestImgH'>
-                            <img src={IS_DEV ? value.cover_image : `${process.env.REACT_APP_BASE_URL}${value.cover_image}` } alt={value.name} />
+                            <img src={IS_DEV ? value.cover_image : `${value.cover_image}` } alt={value.name} />
                         </div>
                         <div className='p-3 borderTops'>
                             <div className="bold6">

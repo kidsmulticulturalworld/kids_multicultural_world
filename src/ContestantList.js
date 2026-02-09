@@ -16,7 +16,7 @@ const ContestantList = ({val,voteVal,contestOver}) => {
                 {val && val.map(x=>(
                     <div className="contestList rounded shadow" key={x.id_}>
                         <Link to={`/contestant/${x.id_}`}>
-                            <img className='center_imager rounded' src={IS_DEV ? x.cover_image : `${process.env.REACT_APP_BASE_URL}${x.cover_image}` } alt="Contestant" />
+                            <img className='center_imager rounded' src={IS_DEV ? x.cover_image : `${x.cover_image}` } alt="Contestant" />
                         </Link>
                         <div className='p-3 borderTops'>
                             <div className="bold6">

@@ -36,7 +36,7 @@ const AllContest = () => {
                                     return (
                                         <div className="contestList rounded shadow" key={index}>
                                             <Link to={`/contest/${val.id}`}>
-                                                <img className='center_imager rounded' src={IS_DEV ? val.cover_image : `${process.env.REACT_APP_BASE_URL}${val.cover_image}` } alt="Contest" />
+                                                <img className='center_imager rounded' src={IS_DEV ? val.cover_image : `${val.cover_image}` } alt="Contest" />
                                             </Link>
                                             <div className='p-3'>
                                                 <Link to={`/contest/${val.id}`} className="bold6">
