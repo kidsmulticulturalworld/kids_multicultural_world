@@ -421,7 +421,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <div className="pt_4">
-                                    Founded in 2017 by Queen Ambassador Dr. Krystal Chanchangi, global cultural activist and youth advocate, Kids Multicultural World has empowered 38,000+ children worldwide, shaping future leaders, creatives, and changemakers.
+                                    Founded in 2017 by Queen Ambassador Dr. Krystal Chanchangi, Global Cultural Activist and youth advocate, Kids Multicultural World has empowered 38,000+ children worldwide, shaping future leaders, creatives, and changemakers.
                                 </div>
                             </div>
                         </div>
