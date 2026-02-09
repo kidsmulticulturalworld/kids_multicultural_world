@@ -62,12 +62,12 @@ const ContestPage = () => {
                 <div className='standard_width VAR'>
                     {value.banner_image && (
                         <div className='contestPage'>
-                            <img className='imgContest' src={IS_DEV ? value.banner_image : `${process.env.REACT_APP_BASE_URL}${value.banner_image}`} alt="Event" />
+                            <img className='imgContest' src={IS_DEV ? value.banner_image : `${value.banner_image}`} alt="Event" />
                         </div>
                     )}
                     
                     <div className='contestImg'>
-                        <img className={value.banner_image ? "userIg center_imager" : "userIg2 center_imager"} src={IS_DEV ? value.cover_image : `${process.env.REACT_APP_BASE_URL}${value.cover_image}` } alt="Contest" />
+                        <img className={value.banner_image ? "userIg center_imager" : "userIg2 center_imager"} src={IS_DEV ? value.cover_image : `${value.cover_image}` } alt="Contest" />
                         <div className='contestDescription'>
                             <div className="font_32 bold6">
                                 {value.name_of_event}
