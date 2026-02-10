@@ -141,19 +141,24 @@
     height: 100%; */
     border-radius: 10px;
     width: 100%;
+    object-fit: cover;
     margin-left: auto;
 }
 
 .aboutPix2 img{
-    max-height: 210px;
+    max-height: 410px;
     border-radius: 10px;
     margin-left: auto;
     margin-top: 10px;
-    max-width: 200px;
+    /* max-width: ; */
+    width: 100%;
 }
 .aboutPix3 img{
     border-radius: 10px;
-    max-width: 250px;
+    /* max-width: 250px; */
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
 }
 .aboutPix4 img{
     border-radius: 10px;

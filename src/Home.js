@@ -429,15 +429,15 @@ const Home = () => {
                             <div className="about_pix_container">
                                 <div>
                                     <div className='aboutPix1 flex'>
-                                        <img src="/Images/kidsWorldPic.jpg" alt="Kids at Kids multicultural world" />
+                                        <img src="/Images/replaced_img1.PNG" alt="Kids at Kids multicultural world" />
                                     </div>
                                     <div className='aboutPix2 flex'>
-                                        <img src="/Images/KleoPatra.jpg" alt="Kids at Kids multicultural world" />
+                                        <img src="/Images/replaced_img3.jpeg" alt="Kids at Kids multicultural world" />
                                     </div>
                                 </div>
                                 <div>
                                     <div className='pt_6 aboutPix3'>
-                                        <img src="/Images/mom_n_daughter.jpg" alt="Kids at Kids multicultural world" />
+                                        <img src="/Images/replaced_img2.PNG" alt="Kids at Kids multicultural world" />
                                     </div>
                                     <div className="mt_1 aboutPix4">
                                         <img src="/Images/kidsWorldGroup.jpeg" alt="Kids world Group" />
