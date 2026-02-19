@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Home';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import ScrollToTop from './ScrollToTop';
+import { HelmetProvider } from 'react-helmet-async';
 import About from './About';
 import Shop from './Shop';
 import Magazines from './Magazines';
@@ -46,9 +47,10 @@ import GetReceipt from './GetReceipt';
 
 function App() {
     return (
-		<div className="App">
-			<Router>
-				<ScrollToTop />
+		<HelmetProvider>
+			<div className="App">
+				<Router>
+					<ScrollToTop />
 				{/* <Navbar /> */}
 				<Routes>
 					
@@ -147,9 +149,10 @@ function App() {
 					<Route path="*" element={<PageNotFound />} />
 					{/* <Route path="/materials/:id" element ={<Materials/>} /> */}
 				</Routes>
-			</Router>
-			
-		</div>
+				</Router>
+				
+			</div>
+		</HelmetProvider>
     );
 }
 

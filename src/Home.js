@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { newsLetterAction } from './Action';
 import Message from './Message';
 import Loader2 from './Loader2';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     const userLogin = useSelector(state => state.userLogin)
@@ -67,6 +68,13 @@ const Home = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Kids Multicultural World</title>
+                <meta 
+                    name="description" 
+                    content="Kids Multicultural World Academy is a global youth leadership and talent-development academy coaching children to become confident leaders and global citizens. We unite kids from diverse cultures through education, creativity, and cultural activism, empowering the next generation to lead with purpose, pride, and compassion. Serving children ages 0–17, we offer leadership training, fashion, modeling, acting, media education, mentorship, bi-weekly magazines, and international fashion shows and festivals." 
+                />
+            </Helmet>
             <Navbar />
             <div className='standard_width homeBased'>
                 <div className="pt_5">

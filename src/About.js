@@ -1,9 +1,17 @@
 import React from 'react'
 import Navbar from './Navbar';
 import Footer from './Footer'
+import { Helmet } from 'react-helmet-async';
 
 const About = () => (
     <div>
+        <Helmet>
+            <title>About Us - Kids Multicultural World</title>
+            <meta 
+                name="description" 
+                content="Kids Multicultural World Academy is a global youth leadership and talent-development academy coaching children to become confident leaders and global citizens. We unite kids from diverse cultures through education, creativity, and cultural activism, empowering the next generation to lead with purpose, pride, and compassion. Serving children ages 0–17, we offer leadership training, fashion, modeling, acting, media education, mentorship, bi-weekly magazines, and international fashion shows and festivals." 
+            />
+        </Helmet>
         <Navbar />
         <div className='standard_width'>
             {/* <div className="aboutLander">
@@ -48,42 +56,46 @@ const About = () => (
             <div className='aboutLandpg'>
                 <img src="/Images/About.jpg" alt="Kids at kids multicultural world event" />
             </div>
-            <div className="mt_7">
-                
-                <div className="standardTwo">
-                    
-                    <div>
+            <div className="py_3">
+                <div className="standard_in">
+                    <div className='font_36 bold6'>
+                        About
+                    </div>
+                    <div className="pt_5 standardTwo justify_me">
                         <div>
-                            <span className="blue fonts2 font_34 bold4">
-                                ABOUT
-                            </span> 
-                            <span className="red pl_05 fonts2 font_34 bold4">
-                                US
-                            </span> 
+                            <div className="font_20 bold6">
+                                Kids Multicultural World Academy is a global youth leadership and talent-development academy coaching children to become confident leaders and global citizens. We unite kids from diverse cultures through education, creativity, and cultural activism, empowering the next generation to lead with purpose, pride, and compassion.
+                            </div>
+                            <div className="pt_3">
+                                Serving children ages 0–17, we offer leadership training, fashion, modeling, acting, media education, mentorship, bi-weekly magazines, and international fashion shows and festivals.
+                            </div>
                         </div>
-                        <p className="font_24 pt_3 bold7 justify_me">
-                            The Kids Multicultural World is a cultural activism, Fashion , Modeling and Acting Academy focused on Uniting a diverse Nation of Kids ages 0 month - 17 years.
-                        </p>
-                        <p className="font_20 pt_3 justify_me">
-                            We produce a bimonthly magazine, online Modeling & acting classes and host annual Kids
-                            Multicultural Fashion Shows & Festivals Worldwide.
-                        </p>
+                        <div>
+                            <div className="pt_4">
+                                Founded in 2017 by Queen Ambassador Dr. Krystal Chanchangi, Global Cultural Activist and youth advocate, Kids Multicultural World has empowered 38,000+ children worldwide, shaping future leaders, creatives, and changemakers.
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        
-                        <p className="font_20 pt_2 justify_me">
-                            We educate Kids to take pride in
-                            cultural heritage ,bring more awareness to multiculturalism to end discrimination, bullying and segregation- understanding the importance of self-growth, building skills, and capitalizing on their individual talents.
-                        </p>
-                        <p className="font_20 justify_me">
-                            This organization was founded on May 1st, 2017 by CEO .Queen Amb. Dr. Krystal Okeke’Chanchangi. A global
-                            cultural activist and voice for the next generation. The
-                            Ceo is focused on eliminating discrimination, bullying, and segregation.
-                        </p>
-                        <p className="font_20">
-                            <span className="red">Mission :</span> Uniting a Diverse Nation
-                        </p>
-                    </div>
+                    {/* <div className="padAbtpix">
+                        <div className="about_pix_container">
+                            <div>
+                                <div className='aboutPix1 flex'>
+                                    <img src="/Images/replaced_img1.PNG" alt="Kids at Kids multicultural world" />
+                                </div>
+                                <div className='aboutPix2 flex'>
+                                    <img src="/Images/replaced_img3.jpeg" alt="Kids at Kids multicultural world" />
+                                </div>
+                            </div>
+                            <div>
+                                <div className='pt_6 aboutPix3'>
+                                    <img src="/Images/replaced_img2.PNG" alt="Kids at Kids multicultural world" />
+                                </div>
+                                <div className="mt_1 aboutPix4">
+                                    <img src="/Images/kidsWorldGroup.jpeg" alt="Kids world Group" />
+                                </div>
+                            </div>
+                        </div>
+                    </div> */}
                 </div>
             </div>
         </div>
