@@ -8,10 +8,11 @@ const checkOutUserInfo = ({
     value=null,id_=null,
     contestant_name=null,
     data=null,
+    total_price=null,
 }) => {
     if(value){
         localStorage.setItem(`checkOutUserInfo`, JSON.stringify({
-            value,id_,contestant_name
+            value,id_,contestant_name,total_price
         }))
         return true
     }

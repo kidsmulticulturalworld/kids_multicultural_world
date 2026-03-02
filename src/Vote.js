@@ -9,7 +9,7 @@ const Vote = ({voteValue,val,setShow,...props}) => {
     const [contestOver, setContestOver] = useState(false)
     const history = useNavigate()
     const payHandler = ()=> {
-        checkOutUserInfo({value,id_:val.id_,contestant_name:val.name})
+        checkOutUserInfo({value,id_:val.id_,contestant_name:val.name,total_price:value * voteValue})
         setShow(false)
         setValue(1)
         history(`/checkout/vote-payment/vote`)

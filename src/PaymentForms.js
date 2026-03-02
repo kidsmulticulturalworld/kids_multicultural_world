@@ -79,7 +79,7 @@ const PaymentForms = ({type = null}) => {
         form.append("email", email.email);
         form.append("signature", signatureFromUser);
         form.append("candidate", persomInfo.contestant_name);
-        form.append("price", persomInfo.value);
+        form.append("price", persomInfo.total_price || persomInfo.value);
 
         const headers = {
             "Content-Type": "multipart/form-data"
