@@ -1,5 +1,44 @@
 import emailjs from 'emailjs-com';
 
+/** CRA only inlines REACT_APP_* — set REACT_APP_FRONT_END_URL in .env for canonical receipt links. */
+const PUBLIC_SITE_URL = (
+  process.env.REACT_APP_FRONT_END_URL || 'https://kidsmulticulturalworld.org'
+).replace(/\/$/, '');
+
+/** EmailJS rejects oversized template params; signature PNGs as base64 are often 100KB+. */
+const MAX_SIGNATURE_CHARS = 40000;
+
+function signatureForTemplate(signature) {
+  if (signature == null || signature === '') return '';
+  const s = String(signature);
+  if (s.length <= MAX_SIGNATURE_CHARS) return s;
+  return '[Signature image omitted — view full receipt at the link below]';
+}
+
+function assertEmailJsEnv() {
+  const { REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE4, REACT_APP_SECRETE } = process.env;
+  if (!REACT_APP_SERVICE_ID || !REACT_APP_TEMPLATE4 || !REACT_APP_SECRETE) {
+    console.error(
+      'EmailJS: missing REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE4, or REACT_APP_SECRETE. ' +
+        'Receipt emails require these at build time (Create React App).'
+    );
+    return false;
+  }
+  return true;
+}
+
+if (process.env.REACT_APP_SECRETE) {
+  emailjs.init(process.env.REACT_APP_SECRETE);
+}
+
+function dataWithoutHugeSignature(data) {
+  const copy = { ...data };
+  if (copy.signature && String(copy.signature).length > 800) {
+    copy.signature = '[omitted — large image]';
+  }
+  return copy;
+}
+
 const sendFallbackEmail = async (data, errorDetails) => {
   const adminEmail = 'kidsmulticulturalworldkmw@gmail.com';
   const errorMessage = `
@@ -13,11 +52,11 @@ Customer Email: ${data.email || 'N/A'}
 Candidate: ${data.candidate || 'N/A'}
 Price: $${data.price || 'N/A'}
 Date Created: ${data.date_created || 'N/A'}
-Receipt Link: https://www.kidsmulticulturalworld.org/get-recept/${data.order_id || 'N/A'}
+Receipt Link: ${PUBLIC_SITE_URL}/get-recept/${data.order_id || 'N/A'}
 
 Error Details: ${errorDetails || 'Unknown error'}
 
-Full Data: ${JSON.stringify(data, null, 2)}
+Full Data: ${JSON.stringify(dataWithoutHugeSignature(data), null, 2)}
   `.trim();
 
   // Try multiple fallback strategies
@@ -35,7 +74,7 @@ Full Data: ${JSON.stringify(data, null, 2)}
           price: data.price || '0',
           email: data.email || 'N/A',
           order_id: data.order_id || 'N/A',
-          link: `https://www.kidsmulticulturalworld.org/get-recept/${data.order_id || 'N/A'}`,
+          link: `${PUBLIC_SITE_URL}/get-recept/${data.order_id || 'N/A'}`,
         },
         process.env.REACT_APP_SECRETE
       );
@@ -75,38 +114,51 @@ Full Data: ${JSON.stringify(data, null, 2)}
   }
 };
 
-const EmailForm = (data) => {
-  // Add date and time and order_id and link to view mail
-  const sendEmail = async () => {
-    try {
-      const templateParams = {
-        to_email: 'kidsmulticulturalworldkmw@gmail.com',
-        subject: 'Vote Receipt',
-        name: data.name,
-        candidate: data.candidate,
-        price: data.price,
-        email: data.email,
-        order_id: data.order_id,
-        // date_created:data.date_created,
-        image_base64: data.signature,
-        link: `https://www.kidsmulticulturalworld.org/get-recept/${data.order_id}`,
-      };
+async function sendVoteReceiptEmail(data) {
+  if (!assertEmailJsEnv()) {
+    return;
+  }
 
-      await emailjs.send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE4,
-        templateParams,
-        process.env.REACT_APP_SECRETE
-      );
-      console.log('Vote receipt email sent successfully');
-
-    } catch (error) {
-      console.error('Failed to send vote receipt email:', error);
-      // Trigger fallback email with error details
-      await sendFallbackEmail(data, error.message || JSON.stringify(error));
-    }
+  const fromId =
+    data.id != null && data.order_id == null ? Number(data.id) + 1000 : undefined;
+  const orderId =
+    data.order_id != null ? data.order_id : Number.isFinite(fromId) ? fromId : undefined;
+  if (orderId == null) {
+    console.error('Vote receipt email: missing order_id / id', data);
+    return;
+  }
+  const templateParams = {
+    to_email: 'kidsmulticulturalworldkmw@gmail.com',
+    subject: 'Vote Receipt',
+    name: data.name,
+    candidate: data.candidate,
+    price: data.price,
+    email: data.email,
+    order_id: orderId,
+    date_created: data.date_created,
+    image_base64: signatureForTemplate(data.signature),
+    link: `${PUBLIC_SITE_URL}/get-recept/${orderId}`,
   };
-  sendEmail();
+
+  try {
+    await emailjs.send(
+      process.env.REACT_APP_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE4,
+      templateParams,
+      process.env.REACT_APP_SECRETE
+    );
+    console.log('Vote receipt email sent successfully');
+  } catch (error) {
+    console.error('Failed to send vote receipt email:', error);
+    await sendFallbackEmail(data, error.message || JSON.stringify(error));
+  }
+}
+
+/** Fire-and-forget; always attach rejection handler so failures surface in the console. */
+const EmailForm = (data) => {
+  void sendVoteReceiptEmail(data).catch((err) =>
+    console.error('Vote receipt email: unhandled error', err)
+  );
 };
 
 export default EmailForm;

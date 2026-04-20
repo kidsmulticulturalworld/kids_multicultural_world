@@ -15,6 +15,16 @@ import moment from 'moment';
 // eslint-disable-next-line no-unused-vars
 const stripePromise = loadStripe(process.env.REACT_APP_STRIP_PUBLIC_KEY);
 
+function safeParseLocalStorage(key) {
+    try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+        console.error(`[Success] Invalid JSON in localStorage key "${key}"`, e);
+        return null;
+    }
+}
+
 const SucessComponent = ({clientSecret}) => {
     const stripe = useStripe();
     const [message, setMessage] = useState(null);
@@ -25,11 +35,9 @@ const SucessComponent = ({clientSecret}) => {
     const checkout = useSelector(state => state.checkout)
     const {loading,error,result} = checkout
 
-    const receipt = JSON.parse(localStorage.getItem(`receiptInfo`)) 
-
-    const persomInfo = JSON.parse(localStorage.getItem(`checkOutUserInfo`))
+    const persomInfo = safeParseLocalStorage('checkOutUserInfo');
     // eslint-disable-next-line no-unused-vars
-    const [emailData, setEmailDatas] = useState(persomInfo.email);
+    const [emailData, setEmailDatas] = useState(persomInfo?.email);
     useEffect(() => {
         setMessage(null)
         setSuccess(false)
@@ -43,23 +51,36 @@ const SucessComponent = ({clientSecret}) => {
     
         stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
             switch (paymentIntent.status) {
-                case "succeeded":
+                case "succeeded": {
+                    const receipt = safeParseLocalStorage('receiptInfo');
+                    const dateCreated = moment.unix(paymentIntent.created).format("MMM Do, YYYY. h:mmA");
+
                     setSuccess(true)
                     setMessage("Payment Successful");
                     dispatch(checkoutAction({
                         link : "keep-track",
                         type: "track",
                         secrete : clientSecret,
-                        receipt: receipt ? receipt : null,
+                        receipt: receipt ?? null,
                         transaction_id:paymentIntent.id,
                         created: paymentIntent.created,
                     }));
-                    EmailForm({
-                        ...receipt, 
-                        order_id: receipt.id + 1000,
-                        date_created: moment.unix(paymentIntent.created).format("MMM Do, YYYY. h:mmA")
-                    });
+
+                    const receiptId = receipt != null ? Number(receipt.id) : NaN;
+                    if (receipt != null && Number.isFinite(receiptId)) {
+                        EmailForm({
+                            ...receipt,
+                            order_id: receiptId + 1000,
+                            date_created: dateCreated,
+                        });
+                    } else {
+                        console.error(
+                            '[Vote receipt email] Skipped: no receiptInfo in localStorage after payment. ' +
+                            'Ensure /api/saveConsentData completed before redirect (vote checkout).'
+                        );
+                    }
                     break;
+                }
                 case "processing":
                     setMessage("Your payment is processing.");
                     break;
@@ -70,6 +91,8 @@ const SucessComponent = ({clientSecret}) => {
                     setMessage("Something went wrong.");
                     break;
             }
+        }).catch((err) => {
+            console.error('[Success] retrievePaymentIntent failed', err);
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [stripe, clientSecret]);
